@@ -1,11 +1,15 @@
 
 import './App.css';
+import Input from './Input';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>React.JS</h1>
-    </div>
+  <div className='card'>
+    <span className='search-emoji'>&#128269;</span>
+    <Input />
+
+  </div>
   );
 }
 
