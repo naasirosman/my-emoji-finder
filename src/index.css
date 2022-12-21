@@ -12,18 +12,17 @@ body {
   }
 .card {
   height: 1rem;
-  width: 20rem;
+  width: 12rem;
   border: 1px solid black;
   border-radius: 1rem;
   background-color: #fee6cd;
   padding: 1rem;
   display: flex;
-
   align-items: center;
 }
 .card:hover {
-  border: 2px solid black;
   transition-duration: 100ms;
+    width: 20rem;
 }
 input {
   background: transparent;
@@ -37,4 +36,43 @@ input:focus {
 }
 .search-emoji {
   margin-right: 5px;
+}
+.emoji-card {
+
+  width: 20rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background-color: white;
+  padding: 1rem;
+  display: block;
+  align-items: center;
+  margin-top: 1rem;
+}
+.description {
+  margin-left: 4px;
+}
+.gg-chevron-double-down {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 22px;
+  height: 22px
+}
+.gg-chevron-double-down::after,
+.gg-chevron-double-down::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  left: 7px;
+  top: 3px
+}
+.gg-chevron-double-down::after {
+  top: 8px
 }
