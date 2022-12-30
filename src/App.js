@@ -42,7 +42,7 @@ const App = () => {
                                     ? 'visible'
                                     : 'hidden',
                                 height:  myStyle[`${index}`]
-                                ? '10rem'
+                                ? '3rem'
                                 : '0rem'
                             }}
 
