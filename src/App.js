@@ -5,6 +5,7 @@ import emojis from './Emoji';
 const App = () => {
 
     const [myStyle, setMyStyle] = useState({});
+    const [visibility, setVisibility] = useState('hidden')
     const handleClick = (id) => {
         setMyStyle((prevState) => ({
             ...myStyle,
@@ -24,6 +25,7 @@ const App = () => {
                             className="emoji-card"
                             key={element.aliases}
                             onClick={() => handleClick(index)}
+
   
                         >
                             <span>{element.emoji}</span>
@@ -35,11 +37,15 @@ const App = () => {
                             </span>
                             <div className='info
                             '
-                                                      style={{
-                                                        display: myStyle[`${index}`]
-                                                            ? 'block'
-                                                            : 'initial',
-                                                    }}
+                            style={{
+                                visibility: myStyle[`${index}`]
+                                    ? 'visible'
+                                    : 'hidden',
+                                height:  myStyle[`${index}`]
+                                ? '10rem'
+                                : '0rem'
+                            }}
+
                             >
                                 <p className='expand'>unicode version: {element.unicode_version}</p>
                                 <p className='expand'>iOS version: {element.ios_version}</p>

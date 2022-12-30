@@ -89,5 +89,5 @@ input:focus {
   margin: 10px;
 }
 .info {
-  display: none;
+  display: block;
 }
