@@ -5,21 +5,29 @@ import emojis from './Emoji';
 const App = () => {
 
     const [myStyle, setMyStyle] = useState({});
-    const [visibility, setVisibility] = useState('hidden')
     const handleClick = (id) => {
         setMyStyle((prevState) => ({
             ...myStyle,
             [id]: !prevState[id],
         }));
     };
+    const [searchValue, setSearchValue] = useState('');
+    const [data, setData] = useState(emojis);
+    const handleChange = event => {
+        setSearchValue(event.target.value);
+      };
+      const filteredEmojis = emojis.filter(element => {
+        return element.description.includes(searchValue.toLowerCase());
+      });
+
     return (
         <div>
             <div className="card">
                 <span className="search-emoji">&#128269;</span>
-                <input placeholder="Search for an Emoji!"></input>
+                <input placeholder="Search for an Emoji!" onChange={handleChange} value={searchValue}></input>
             </div>
             <div>
-                {emojis.map((element, index) => {
+                {filteredEmojis.map((element, index) => {
                     return (
                         <div
                             className="emoji-card"
